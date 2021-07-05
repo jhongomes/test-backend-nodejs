@@ -1,0 +1,287 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "Backend Products",
+      "description": "Backend API.",
+      "contact": {
+        "email": "jhonatangomes859@gmail.com"
+    }
+    },
+    "host": "localhost:3333",
+    "basePath": "/",
+    "consumes": [
+      "application/json"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "paths": {
+        "/categories/{name}":{
+            "get": {
+                "tags": ["Categories"],
+                "description": "List category by name",
+                "produces": [
+                  "application/json"
+                ],
+                "parameters": [
+                  {
+                    "name": "name",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                  }
+                ],
+                "responses": {
+                  "200": {
+                    "description": "OK"
+                  },
+                  "404": {
+                    "description": "Not Found"
+                  }
+                }
+            }
+
+        },
+        "/categories/":{
+            "get": {
+                "tags": ["Categories"],
+                "sumary": "List all categories",
+                "description": "list all categories",
+                "produces": [
+                  "application/json"
+                ],
+                "responses": {
+                  "200": {
+                    "description": "Sucess!"
+                  },
+                  "404": {
+                    "description": "Not Found"
+                  }
+                }
+              }
+
+        },
+        "/categories": {
+            "post": {
+                "tags": ["Categories"],
+                "sumary": "Create a category",
+                "description": "Create a new category",
+                "produces": [
+                  "application/json"
+                ],
+                "parameters": [
+                  {
+                    "name": "name",
+                    "in": "body",
+                    "type": "string"
+                  },
+                  {
+                    "name": "description",
+                    "in": "body",
+                    "type": "string"
+                  }
+                ],
+        
+                "responses": {
+                  "201": {
+                    "description": "Created new category sucess!"
+                  },
+                  "500": {
+                    "description": "Internal Server Error"
+                  }
+                }
+              }
+
+        },
+        "/categories/{id}/":{
+            "put": {
+                "tags": ["Categories"],
+                "description": "Update category",
+                "produces": [
+                  "application/json"
+                ],
+                "parameters": [
+                  {
+                    "name": "id",
+                    "in": "paths",
+                    "required": true,
+                    "type": "string"
+                  },
+                  {
+                    "name": "name",
+                    "in": "body",
+                    "type": "string"
+                  },
+                  {
+                    "name": "description",
+                    "in": "body",
+                    "type": "string"
+                  }
+                ],
+                "responses": {
+                  "201": {
+                    "description": "Updated category sucess!"
+                  },
+                  "500": {
+                    "description": "Internal Server Error"
+                  }
+                }
+              }
+
+        },
+      "/products/{titulo}": {
+        "get": {
+          "tags": ["Products"],
+          "description": "List product by title",
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "titulo",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK"
+            },
+            "404": {
+              "description": "Not Found"
+            }
+          }
+        }
+      },
+      "/products/": {
+        "get": {
+          "tags": ["Products"],
+          "sumary": "List all products",
+          "description": "list all products",
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "OK"
+            },
+            "404": {
+              "description": "Not Found"
+            }
+          }
+        }
+      },
+      "/products": {
+        "post": {
+          "tags": ["Products"],
+          "sumary": "Create a product",
+          "description": "Create a new product",
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "titulo",
+              "in": "body",
+              "type": "string"
+            },
+            {
+              "name": "descricao",
+              "in": "body",
+              "type": "string"
+            },
+            {
+              "name": "preco",
+              "in": "body",
+              "type": "string"
+            },
+            {
+                "name": "id",
+                "in": "path",
+                "required": true,
+                "type": "string"
+              }
+          ],
+  
+          "responses": {
+            "201": {
+              "description": "Created new product sucess!"
+            },
+            "500": {
+              "description": "Internal Server Error"
+            }
+          }
+        }
+      },
+      "/products/{id}/": {
+        "put": {
+          "tags": ["Products"],
+          "description": "Update product",
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "titulo",
+              "in": "body",
+              "type": "string"
+            },
+            {
+              "name": "descricao",
+              "in": "body",
+              "type": "string"
+            },
+            {
+              "name": "preco",
+              "in": "body",
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "201": {
+              "description": "Updated product sucess!"
+            },
+            "500": {
+              "description": "Internal Server Error"
+            }
+          }
+        },
+          "delete": {
+            "tags": ["Products"],
+            "sumary": "Delete a product",
+            "description": "Delet product",
+            "parameters": [
+              {
+                "name": "id",
+                "in": "path",
+                "required": true,
+                "type": "string"
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "OK"
+              },
+              "404": {
+                "description": "Not Found"
+              }
+            }
+          }
+      }
+       
+    
+    }     
+
+
+ }
+    
+  
+  

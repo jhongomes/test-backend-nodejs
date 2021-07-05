@@ -1,10 +1,10 @@
 import 'express-async-errors';
 import 'reflect-metadata';
 
-
+import swaggerFile from "./swagger.json"
 
 import express, { Request, Response, NextFunction } from 'express';
-
+import swaggerUi from "swagger-ui-express";
 
 import AppError from './errors/AppError';
 import path from 'path';
@@ -18,7 +18,7 @@ app.use(express.json())
 
 app.use(routes);
 
-
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
 
 app.use((err: Error, resquest: Request, response: Response, _:NextFunction)=>{
