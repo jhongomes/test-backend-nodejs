@@ -1,18 +1,14 @@
 import express from 'express';
 import path from 'path'
 import { Router } from 'express'
-
+import {productsRouter} from "./products";
 import { categoriesRouter } from './category';
 
 
 const routes = Router();
 
 
-
-routes.get('/', (request, response ) => 
-response.json({ message: 'BACKEND 🚀🚀'  }));
-
-
+routes.use("/products", productsRouter)
 routes.use("/categories", categoriesRouter)
 
 
