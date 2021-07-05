@@ -8,13 +8,15 @@ import express, { Request, Response, NextFunction } from 'express';
 
 import AppError from './errors/AppError';
 import path from 'path';
+import './database'
+import routes from './routes'
 
 
 
 const app = express();
 app.use(express.json())
 
-
+app.use(routes);
 
 
 
