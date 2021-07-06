@@ -35,7 +35,6 @@ desenvolver uma API, usando o Node.JS, para um aplicativo de gerenciamento de ca
   - [] Listar uma categoria pelo titulo passado como parâmetro: retorna uma única categoria com seus dados.
   - [] Alterar name e description recebido no corpo da requisição, baseado no id(uuid) recebido como parâmetro de rota: retorna o categoria alterada com as novas informações.
     - Se o name da categoria for existente, deve retornar status e mensagem de erro.
-  - [] Deletar uma categoria baseado no id recebido como parâmetro de rota: retorna o status de sucesso.
 
 <br>
 
